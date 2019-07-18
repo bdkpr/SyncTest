@@ -1,16 +1,16 @@
 {
-  "enforceSecurity" : false,
+  "enforceSecurity" : true,
   "loginConfig" : {
-    "type" : "PAGE",
+    "type" : "SSO",
     "pageName" : "Login",
     "sessionTimeout" : {
-      "type" : "DIALOG",
+      "type" : "SSO",
       "pageName" : null,
       "timeoutValue" : 30
     }
   },
   "rememberMeConfig" : {
-    "enabled" : true,
+    "enabled" : false,
     "tokenValiditySeconds" : 1296000
   },
   "tokenAuthConfig" : {
@@ -22,5 +22,26 @@
     "enforceCsrfSecurity" : true,
     "headerName" : "X-WM-XSRF-TOKEN"
   },
-  "authProviders" : { }
+  "authProviders" : {
+    "OPENID" : {
+      "enabled" : true,
+      "openIdProviderInfoList" : [ {
+        "providerId" : "google",
+        "clientId" : "907865987932-hfv4n5fccgooisccjg40b8vefrc8tfou.apps.googleusercontent.com",
+        "clientSecret" : "_kP4R5dXV7uCoD5aAAO2Cddr",
+        "authorizationUrl" : "https://accounts.google.com/o/oauth2/v2/auth",
+        "tokenUrl" : "https://www.googleapis.com/oauth2/v4/token",
+        "jwkSetUrl" : "https://www.googleapis.com/oauth2/v3/certs",
+        "userInfoUrl" : "https://www.googleapis.com/oauth2/v3/userinfo",
+        "scopes" : [ "email" ],
+        "redirectUrlTemplate" : "http://localhost:9080/studio/oauth2/code/google",
+        "userNameAttributeName" : "email"
+      } ],
+      "roleMappingEnabled" : true,
+      "roleMappingConfig" : {
+        "roleAttributeName" : "openid"
+      },
+      "type" : "OPENID"
+    }
+  }
 }

@@ -1,0 +1,17 @@
+{
+  "description" : null,
+  "methods" : {
+    "updateUser" : [ {
+      "url" : {
+        "value" : "/user",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "PUT",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : { }
+    } ]
+  }
+}

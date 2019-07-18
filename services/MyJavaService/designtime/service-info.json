@@ -1,0 +1,7 @@
+{
+  "id" : "MyJavaService",
+  "type" : "JavaService",
+  "packageNames" : [ "com.synctest.myjavaservice" ],
+  "serviceClassNames" : [ "com.synctest.myjavaservice.MyJavaService" ],
+  "title" : "MyJavaService"
+}
